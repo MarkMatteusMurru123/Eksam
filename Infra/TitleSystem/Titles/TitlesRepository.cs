@@ -1,7 +1,7 @@
 ﻿using Data.TitleSystem.Titles;
 using Domain.TitleSystem.Titles;
 
-namespace Infra.Exam.Titles
+namespace Infra.TitleSystem.Titles
 {
     public sealed class TitlesRepository : UniqueEntityRepository<Title, TitleData>, ITitlesRepository
     {

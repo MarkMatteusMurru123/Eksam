@@ -1,7 +1,7 @@
 ﻿using Data.TitleSystem.People;
 using Domain.TitleSystem.People;
 
-namespace Infra.Exam.People
+namespace Infra.TitleSystem.People
 {
     public sealed class PeopleRepository : UniqueEntityRepository<Person, PersonData>, IPeopleRepository
     {

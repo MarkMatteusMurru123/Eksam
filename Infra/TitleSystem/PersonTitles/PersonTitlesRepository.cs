@@ -1,7 +1,7 @@
 ﻿using Data.TitleSystem.PersonTitles;
 using Domain.TitleSystem.PersonTitles;
 
-namespace Infra.Exam.PersonTitles
+namespace Infra.TitleSystem.PersonTitles
 {
     public sealed class PersonTitlesRepository : UniqueEntityRepository<PersonTitle, PersonTitleData>, IPersonTitlesRepository
     {
