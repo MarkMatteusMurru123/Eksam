@@ -1,5 +1,5 @@
-﻿using Data.Exam.Titles;
-using Domain.Exam.Titles;
+﻿using Data.TitleSystem.Titles;
+using Domain.TitleSystem.Titles;
 
 namespace Infra.Exam.Titles
 {

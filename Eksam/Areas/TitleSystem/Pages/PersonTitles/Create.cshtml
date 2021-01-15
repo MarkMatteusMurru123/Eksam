@@ -1,0 +1,18 @@
+﻿@page
+@using Pages.Extensions
+@model WebApp.Areas.TitleSystem.Pages.PersonTitles.CreateModel
+
+@{ Layout = "_Create";
+                const string title = "/TitleSystem/Titles"; }
+
+<body>
+@Html.EditControlsFor(model => model.Item.Id)
+@Html.EditControlsFor(model => model.Item.Name)
+@Html.EditControlsForDropDown(model => model.Item.PersonId, Model.People)
+@Html.EditControlsForDropDown(model => model.Item.TitleId, Model.Titles)
+</body>
+
+<div>
+    @Html.HypertextLinkFor(string.Empty, new Link("Loo tiitel",
+            $"{title}/Create"))
+</div>

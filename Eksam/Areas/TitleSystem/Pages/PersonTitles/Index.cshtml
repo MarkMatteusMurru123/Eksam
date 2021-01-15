@@ -1,0 +1,32 @@
+﻿@page
+@using Pages.Extensions
+@model WebApp.Areas.TitleSystem.Pages.PersonTitles.IndexModel
+@{ Layout = "_Index";
+                var page = Model.PageUrl; }
+@section Create {
+    @Html.HypertextLinkFor(string.Empty, new Link(Constants.createNewLinkTitle, $"{page}/Create"))
+}
+<body>
+    <table class="table">
+        <thead>
+            @Html.TableHeaderFor(
+                     new Link(Html.DisplayNameFor(m => m.Item.PersonId), Model.GetSortString(m => m.PersonId, page)),
+                     new Link(Html.DisplayNameFor(m => m.Item.TitleId), Model.GetSortString(m => m.TitleId, page))
+                 )
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+<tr>
+    @Html.TableRowFor(
+             page,
+             item.GetId(),
+             Model.FixedFilter,
+             Model.FixedValue,
+             Html.Raw(Model.GetPersonName(item.PersonId)),
+             Html.Raw(Model.GetTitleName(item.TitleId))
+             )
+</tr>            }
+        </tbody>
+    </table>
+</body>

@@ -1,0 +1,12 @@
+﻿@page
+@using Pages.Extensions
+@model WebApp.Areas.TitleSystem.Pages.PersonTitles.EditModel
+
+@{ Layout = "_Edit"; }
+
+<body>
+    @Html.EditControlsForDropDown(model => model.Item.PersonId, Model.People)
+    @Html.EditControlsForDropDown(model => model.Item.TitleId, Model.Titles)
+    @Html.EditControlsFor(model => model.Item.Name)
+    
+</body>

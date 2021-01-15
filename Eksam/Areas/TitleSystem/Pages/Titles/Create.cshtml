@@ -1,0 +1,11 @@
+﻿@page
+@using Pages.Extensions
+@model WebApp.Areas.TitleSystem.Pages.Titles.CreateModel
+
+@{ Layout = "_Create"; }
+
+<body>
+    @Html.EditControlsFor(model => model.Item.Id)
+    @Html.EditControlsFor(model => model.Item.Name)
+    @Html.EditControlsFor(model => model.Item.TitlePrefix)
+</body>

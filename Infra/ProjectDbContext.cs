@@ -1,6 +1,6 @@
-﻿using Data.Exam.People;
-using Data.Exam.PersonTitles;
-using Data.Exam.Titles;
+﻿using Data.TitleSystem.People;
+using Data.TitleSystem.PersonTitles;
+using Data.TitleSystem.Titles;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infra

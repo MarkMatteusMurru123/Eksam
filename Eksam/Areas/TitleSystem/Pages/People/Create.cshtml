@@ -1,0 +1,13 @@
+﻿@page
+@using Pages.Extensions
+@model WebApp.Areas.TitleSystem.Pages.People.CreateModel
+
+@{ Layout = "_Create"; }
+
+<body>
+    @Html.EditControlsFor(model => model.Item.Id)
+    @Html.EditControlsFor(model => model.Item.Name)
+    @Html.EditControlsFor(model => model.Item.Age)
+    @Html.EditControlsFor(model => model.Item.Email)
+@Html.EditControlsForDropDown(model => model.Item.Gender, Model.Genders)
+</body>

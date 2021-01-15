@@ -1,5 +1,6 @@
-﻿using Data.Exam.PersonTitles;
-using Domain.Exam.PersonTitles;
+﻿using Data.TitleSystem.PersonTitles;
+using Domain.TitleSystem.PersonTitles;
+
 namespace Infra.Exam.PersonTitles
 {
     public sealed class PersonTitlesRepository : UniqueEntityRepository<PersonTitle, PersonTitleData>, IPersonTitlesRepository

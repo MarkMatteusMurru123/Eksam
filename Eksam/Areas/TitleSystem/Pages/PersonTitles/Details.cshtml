@@ -1,0 +1,13 @@
+﻿@page
+@using Pages.Extensions
+@model WebApp.Areas.TitleSystem.Pages.PersonTitles.DetailsModel
+
+@{ Layout = "_Details"; }
+<body>
+    @Html.DisplayControlsFor(model => model.Item.PersonId, Model.GetPersonName(Model.Item.PersonId))
+    @Html.DisplayControlsFor(model => model.Item.TitleId, Model.GetTitleName(Model.Item.TitleId))
+@Html.DisplayControlsFor(model => model.Item.Id)
+@Html.DisplayControlsFor(model => model.Item.Name)
+</body>
+@section Details {
+}

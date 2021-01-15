@@ -1,0 +1,67 @@
+﻿@page
+@using Aids
+@using Facade.TitleSystem.People
+@using Pages.Extensions
+@model WebApp.Areas.TitleSystem.Pages.People.IndexModel
+
+@{ Layout = "_Index";
+    var page = Model.PageUrl; }
+
+@section Create {
+    @Html.HypertextLinkFor(string.Empty, new Link(Constants.createNewLinkTitle, $"{page}/Create"))
+}
+
+<body>
+    <table class="table">
+        <thead>
+            @Html.TableHeaderFor(
+                          new Link(Html.DisplayNameFor(m => m.Item.Name), Model.GetSortString(m => m.Name, page)),
+                          new Link(Html.DisplayNameFor(m => m.Item.Email), Model.GetSortString(m => m.Email, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.Gender), Model.GetSortString(m => m.Gender, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.Age), Model.GetSortString(m => m.Age, page))
+                          )
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                var selectedRow = "";
+                if (item.Id == Model.SelectedId)
+                {
+                    selectedRow = "alert-success";
+                    Model.LoadDetails(item);
+                }
+<tr class=@selectedRow>
+    @Html.TableRowWithSelectFor(
+                 page,
+                 item.Id,
+                 Model.SortOrder,
+                 Model.SearchString,
+                 Model.PageIndex,
+                 Model.FixedFilter,
+                 Model.FixedValue,
+                 Html.DisplayFor(modelItem => item.Name),
+                 Html.DisplayFor(modelItem => item.Email),
+            Html.DisplayFor(modelItem => item.Gender),
+            Html.DisplayFor(modelItem => item.Age)
+                 )
+</tr>
+       }
+        </tbody>
+    </table>
+@if (Model.titles.Count != 0)
+{
+    <h3>Inimese tiitlid</h3>
+    <table class="table">
+        <tr>
+            <th>@(GetMember.DisplayName<PersonView>(x => x.Id))</th>
+        </tr>
+
+        @foreach (var item in Model.titles)
+        {
+            <tr>
+                <td> @Html.Raw(Model.GetTitleName(item.TitleId))
+            </tr>
+        }
+
+    </table>}
+</body>

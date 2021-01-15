@@ -1,0 +1,64 @@
+﻿@page
+@using Aids
+@using Facade.TitleSystem.People
+@using Pages.Extensions
+@model WebApp.Areas.TitleSystem.Pages.Titles.IndexModel
+
+@{ Layout = "_Index";
+    var page = Model.PageUrl; }
+
+@section Create {
+    @Html.HypertextLinkFor(string.Empty, new Link(Constants.createNewLinkTitle, $"{page}/Create"))
+}
+
+<body>
+    <table class="table">
+        <thead>
+            @Html.TableHeaderFor(
+                          new Link(Html.DisplayNameFor(m => m.Item.Name), Model.GetSortString(m => m.Name, page)),
+                          new Link(Html.DisplayNameFor(m => m.Item.TitlePrefix), Model.GetSortString(m => m.TitlePrefix, page))
+                          )
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                var selectedRow = "";
+                if (item.Id == Model.SelectedId)
+                {
+                    selectedRow = "alert-success";
+                    Model.LoadDetails(item);
+                }
+<tr class=@selectedRow>
+    @Html.TableRowWithSelectFor(
+                 page,
+                 item.Id,
+                 Model.SortOrder,
+                 Model.SearchString,
+                 Model.PageIndex,
+                 Model.FixedFilter,
+                 Model.FixedValue,
+                 Html.DisplayFor(modelItem => item.Name),
+                 Html.DisplayFor(modelItem => item.TitlePrefix)
+                 )
+</tr>
+       }
+        </tbody>
+    </table>
+
+    @if (Model.PersonTitles.Count != 0)
+    {
+<h3>Tiitliga inimesed</h3>
+                <table class="table">
+                    <tr>
+                        <th>@(GetMember.DisplayName<PersonView>(x => x.Id))</th>
+                    </tr>
+
+                    @foreach (var item in Model.PersonTitles)
+                    {
+    <tr>
+        <td> @Html.Raw(Model.GetPersonTitleName(item.Id))
+    </tr>
+}
+
+                </table>}
+</body>

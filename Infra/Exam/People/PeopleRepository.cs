@@ -1,5 +1,5 @@
-﻿using Data.Exam.People;
-using Domain.Exam.People;
+﻿using Data.TitleSystem.People;
+using Domain.TitleSystem.People;
 
 namespace Infra.Exam.People
 {

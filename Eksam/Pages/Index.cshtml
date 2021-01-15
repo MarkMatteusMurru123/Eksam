@@ -1,10 +1,20 @@
 ﻿@page
+@using global::Pages.Extensions
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Title System";
+    var page = "/TitleSystem/Titles";
+    var peoplePage = "/TitleSystem/People";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<body class="background">
+    <div class="text-center">
+        <h1 class="display-1">
+            <strong>Triple M TitleSystem</strong>
+        </h1>
+    </div>
+    <div class="text-center">
+        @Html.HypertextLinkFor(string.Empty, new Link(Constants.createNewTitleTitle, $"{page}/Create"))
+        @Html.HypertextLinkFor(string.Empty, new Link(Constants.createNewPersonTitle, $"{peoplePage}/Create"))
+    </div>
+</body>

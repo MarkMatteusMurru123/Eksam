@@ -1,0 +1,21 @@
+﻿@page
+@using Aids
+@using Data.TitleSystem.PersonTitles
+@using Data.TitleSystem.Titles
+@using Pages.Extensions
+@model WebApp.Areas.TitleSystem.Pages.Titles.DetailsModel
+
+@{ Layout = "_Details";
+    const string titles = "/TitleSystem/Titles";
+    var titleId = GetMember.Name<PersonTitleData>(x => x.TitleId); }
+
+<body>
+    @Html.DisplayControlsFor(model => model.Item.Id)
+    @Html.DisplayControlsFor(model => model.Item.Name)
+    @Html.DisplayControlsFor(model => model.Item.TitlePrefix)
+
+</body>
+
+@section Details {
+    @Html.HypertextLinkFor(string.Empty, new Link("Näita tiitliga inimesi", $"{titles}/Index?fixedFilter={titleId}&fixedValue={Model.Item.Id}"))
+}
