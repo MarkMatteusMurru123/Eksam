@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Data.TitleSystem.PersonTitles.PersonTitleData" Collapsed="true">
+    <Position X="15.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TitleSystem\PersonTitles\PersonTitleData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.TitleSystem.Titles.TitleData" Collapsed="true">
+    <Position X="13.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>TitleSystem\Titles\TitleData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.TitleSystem.People.PersonData" Collapsed="true">
+    <Position X="18.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAACAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TitleSystem\People\PersonData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.Abstractions.UniqueEntityData" Collapsed="true">
+    <Position X="17.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstractions\UniqueEntityData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.Abstractions.NamedEntityData" Collapsed="true">
+    <Position X="16" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstractions\NamedEntityData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.Abstractions.DefinedEntityData" Collapsed="true">
+    <Position X="14" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstractions\DefinedEntityData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
